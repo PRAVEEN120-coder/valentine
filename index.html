@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <title>Will you be my Valentine?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffdee9, #ffc3a0);
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 360px;
+    }
+    h1 { margin-bottom: 10px; }
+    .telugu {
+      color: #ff4d6d;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 25px;
+      border-radius: 25px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+    }
+    #yes {
+      background: #ff4d6d;
+      color: white;
+      margin-right: 15px;
+    }
+    #no {
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>SIRISHA, will you be my Valentine? ❤️</h1>
+    <div class="telugu">నిన్ను నేను చాలా ప్రేమిస్తున్నాను 💖</div>
+    <p>(I love you so much 😘)</p>
+    <button id="yes" onclick="yesClicked()">YES</button>
+    <button id="no" onmouseover="moveNo()">NO</button>
+  </div>
+
+  <script>
+    function moveNo() {
+      const no = document.getElementById("no");
+      no.style.position = "absolute";
+      no.style.left = Math.random() * (window.innerWidth - 100) + "px";
+      no.style.top = Math.random() * (window.innerHeight - 40) + "px";
+    }
+    function yesClicked() {
+      document.body.innerHTML =
+        "<h1 style='color:#ff4d6d'>యే! ❤️ నువ్వే నా ప్రపంచం 😍</h1>";
+    }
+  </script>
+
+</body>
+</html>
