@@ -144,12 +144,12 @@ function moveNo() {
 
 /* Auto heart & rose rain */
 function createFall() {
-  const icons = ["❤️", "🌹", "💖"];
+  const icons = ["❤️", "🌹", "💖","❤️", "🌹", "💖"];
   const el = document.createElement("div");
   el.className = "fall";
   el.innerText = icons[Math.floor(Math.random() * icons.length)];
   el.style.left = Math.random() * window.innerWidth + "px";
-  el.style.animationDuration = (6 + Math.random() * 4) + "s";
+  el.style.animationDuration = (8 + Math.random() * 5) + "s";
   document.body.appendChild(el);
   setTimeout(() => el.remove(), 8000);
 }
