@@ -85,24 +85,27 @@
     <button id="no" onmouseover="moveNo()">NO 🙈</button>
   </div>
 
-  <script>
-    function moveNo() {
-      const no = document.getElementById("no");
-      no.style.position = "absolute";
-      no.style.left = Math.random() * (window.innerWidth - 120) + "px";
-      no.style.top = Math.random() * (window.innerHeight - 50) + "px";
-    }
+ <script>
+  function moveNo() {
+    const no = document.getElementById("no");
+    no.style.position = "absolute";
+    no.style.left = Math.random() * (window.innerWidth - 120) + "px";
+    no.style.top = Math.random() * (window.innerHeight - 50) + "px";
+  }
 
-    function yesClicked() {
-      document.body.innerHTML = `
-        <div style="text-align:center;">
-          <h1 style="color:#ff4d6d;">Yay! ❤️</h1>
-          <h2>You just made me the happiest person 😍</h2>
-          <p>I promise to choose you, today and always 💍</p>
-        </div>
-      `;
-    }
-  </script>
+  function yesClicked() {
+    document.body.innerHTML = `
+      <div style="text-align:center;">
+        <h1 style="color:#ff4d6d;">Yay! ❤️</h1>
+        <h2>You just made me the happiest person 😍</h2>
+        <p>I promise to choose you, today and always 💍</p>
+
+        <div class="signature">— Praveen</div>
+        <div class="date">14 Feb 2026 💕</div>
+      </div>
+    `;
+  }
+</script>
 
 </body>
 </html>
