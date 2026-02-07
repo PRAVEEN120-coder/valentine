@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Will You Be My Valentine?</title>
 
 <style>
@@ -16,43 +17,50 @@ body {
   overflow: hidden;
 }
 
-/* Main card */
+/* Card */
 .card {
   background: white;
-  padding: 40px;
-  border-radius: 20px;
+  padding: 28px 22px;
+  border-radius: 18px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  max-width: 380px;
+  width: 90%;
+  max-width: 360px;
   position: relative;
   z-index: 2;
 }
 
+h1 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
 .telugu {
   color: #ff4d6d;
-  font-size: 17px;
-  margin: 10px 0;
+  font-size: 16px;
+  margin: 8px 0;
 }
 
 .english {
   font-size: 14px;
   color: #444;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  line-height: 1.4;
 }
 
 /* Buttons */
 button {
-  padding: 10px 28px;
-  border-radius: 25px;
+  padding: 10px 22px;
+  border-radius: 22px;
   border: none;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
 }
 
 #yes {
   background: #ff4d6d;
   color: white;
-  margin-right: 15px;
+  margin-right: 12px;
 }
 
 #no {
@@ -64,9 +72,10 @@ button {
 .fall {
   position: fixed;
   top: -20px;
-  font-size: 22px;
+  font-size: 20px;
   animation: fall linear forwards;
   z-index: 1;
+  pointer-events: none;
 }
 
 @keyframes fall {
@@ -78,27 +87,27 @@ button {
 
 /* Forever animation */
 .forever {
-  font-size: 26px;
+  font-size: 24px;
   color: #ff4d6d;
-  margin-top: 15px;
+  margin-top: 12px;
   animation: glow 2s infinite alternate;
 }
 
 @keyframes glow {
   from { text-shadow: 0 0 5px #ff9aa2; }
-  to { text-shadow: 0 0 15px #ff4d6d; }
+  to { text-shadow: 0 0 16px #ff4d6d; }
 }
 
 /* Signature */
 .signature {
   font-family: "Comic Sans MS", "Brush Script MT", cursive;
-  font-size: 24px;
-  margin-top: 25px;
+  font-size: 22px;
+  margin-top: 20px;
   color: #ff4d6d;
 }
 
 .date {
-  font-size: 14px;
+  font-size: 13px;
   color: #777;
 }
 </style>
@@ -107,7 +116,7 @@ button {
 <body>
 
 <div class="card">
-  <h1>SIRISHA, will you be my Valentine? ❤️</h1>
+  <h1>PAILA SIRISHA, will you be my Valentine? ❤️</h1>
 
   <div class="telugu">
     నిన్ను నేను చాలా ప్రేమిస్తున్నాను 💖
@@ -125,6 +134,7 @@ button {
 </div>
 
 <script>
+/* NO button escape */
 function moveNo() {
   const no = document.getElementById("no");
   no.style.position = "absolute";
@@ -132,30 +142,33 @@ function moveNo() {
   no.style.top = Math.random() * (window.innerHeight - 50) + "px";
 }
 
+/* Auto heart & rose rain */
 function createFall() {
   const icons = ["❤️", "🌹", "💖"];
   const el = document.createElement("div");
   el.className = "fall";
   el.innerText = icons[Math.floor(Math.random() * icons.length)];
   el.style.left = Math.random() * window.innerWidth + "px";
-  el.style.animationDuration = (3 + Math.random() * 3) + "s";
+  el.style.animationDuration = (6 + Math.random() * 4) + "s";
   document.body.appendChild(el);
-  setTimeout(() => el.remove(), 6000);
+  setTimeout(() => el.remove(), 8000);
 }
 
+/* Start rain automatically */
+setInterval(createFall, 500);
+
+/* YES click result */
 function yesClicked() {
   document.body.innerHTML = `
     <div style="text-align:center; z-index:2;">
       <h1 style="color:#ff4d6d;">Yay! ❤️</h1>
-      <h2>You just made me the happiest person 😍</h2>
+      <h2 style="font-size:20px;">You just made me the happiest person 😍</h2>
       <div class="forever">Forever & Always 💞</div>
 
-      <div class="signature">— Praveen</div>
+      <div class="signature">— Kondala Praveen Kumar</div>
       <div class="date">14 Feb 2026 💕</div>
     </div>
   `;
-
-  setInterval(createFall, 300);
 }
 </script>
 
