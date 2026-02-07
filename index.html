@@ -1,110 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Will you be my Valentine?</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #ffdee9, #ffc3a0);
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
-    .card {
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      max-width: 380px;
-    }
-    h1 {
-      margin-bottom: 10px;
-    }
-    .tagline {
-      font-size: 15px;
-      color: #555;
-      margin-bottom: 12px;
-    }
-    .telugu {
-      color: #ff4d6d;
-      font-size: 17px;
-      margin-bottom: 8px;
-    }
-    .english-love {
-      font-size: 14px;
-      color: #444;
-      margin-bottom: 20px;
-    }
-    button {
-      padding: 10px 28px;
-      border-radius: 25px;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      position: relative;
-    }
-    #yes {
-      background: #ff4d6d;
-      color: white;
-      margin-right: 15px;
-    }
-    #no {
-      background: #ddd;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Will You Be My Valentine?</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffdee9, #ffc3a0);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Main card */
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-width: 380px;
+  position: relative;
+  z-index: 2;
+}
+
+.telugu {
+  color: #ff4d6d;
+  font-size: 17px;
+  margin: 10px 0;
+}
+
+.english {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 28px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#yes {
+  background: #ff4d6d;
+  color: white;
+  margin-right: 15px;
+}
+
+#no {
+  background: #ddd;
+  position: relative;
+}
+
+/* Falling hearts & roses */
+.fall {
+  position: fixed;
+  top: -20px;
+  font-size: 22px;
+  animation: fall linear forwards;
+  z-index: 1;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+/* Forever animation */
+.forever {
+  font-size: 26px;
+  color: #ff4d6d;
+  margin-top: 15px;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #ff9aa2; }
+  to { text-shadow: 0 0 15px #ff4d6d; }
+}
+
+/* Signature */
+.signature {
+  font-family: "Comic Sans MS", "Brush Script MT", cursive;
+  font-size: 24px;
+  margin-top: 25px;
+  color: #ff4d6d;
+}
+
+.date {
+  font-size: 14px;
+  color: #777;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="card">
-    <h1>SIRISHA, will you be my Valentine? ❤️</h1>
+<div class="card">
+  <h1>SIRISHA, will you be my Valentine? ❤️</h1>
 
-    <div class="tagline">
-      I’ve been wanting to ask you something special…
-    </div>
-
-    <div class="telugu">
-      నిన్ను నేను చాలా ప్రేమిస్తున్నాను 💖
-    </div>
-
-<div class="english-love">
-  I may not be perfect, but my feelings for you are real.  
-  You make my days brighter, my smiles wider,  
-  and my heart calmer.  
-  <br><br>
-  So here I am, asking you from my heart…
-  <br><br>
-  <strong>— With love, PRAVEEN KUMAR 💖</strong>
-</div>
-
-    <button id="yes" onclick="yesClicked()">YES 💕</button>
-    <button id="no" onmouseover="moveNo()">NO 🙈</button>
+  <div class="telugu">
+    నిన్ను నేను చాలా ప్రేమిస్తున్నాను 💖
   </div>
 
- <script>
-  function moveNo() {
-    const no = document.getElementById("no");
-    no.style.position = "absolute";
-    no.style.left = Math.random() * (window.innerWidth - 120) + "px";
-    no.style.top = Math.random() * (window.innerHeight - 50) + "px";
-  }
+  <div class="english">
+    I may not be perfect, but my love for you is real.  
+    You make my days brighter and my heart happier.  
+    <br><br>
+    So here I am, asking you from my heart…
+  </div>
 
-  function yesClicked() {
-    document.body.innerHTML = `
-      <div style="text-align:center;">
-        <h1 style="color:#ff4d6d;">Yay! ❤️</h1>
-        <h2>You just made me the happiest person 😍</h2>
-        <p>I promise to choose you, today and always 💍</p>
+  <button id="yes" onclick="yesClicked()">YES 💕</button>
+  <button id="no" onmouseover="moveNo()">NO 🙈</button>
+</div>
 
-        <div class="signature">— Praveen</div>
-        <div class="date">14 Feb 2026 💕</div>
-      </div>
-    `;
-  }
+<script>
+function moveNo() {
+  const no = document.getElementById("no");
+  no.style.position = "absolute";
+  no.style.left = Math.random() * (window.innerWidth - 120) + "px";
+  no.style.top = Math.random() * (window.innerHeight - 50) + "px";
+}
+
+function createFall() {
+  const icons = ["❤️", "🌹", "💖"];
+  const el = document.createElement("div");
+  el.className = "fall";
+  el.innerText = icons[Math.floor(Math.random() * icons.length)];
+  el.style.left = Math.random() * window.innerWidth + "px";
+  el.style.animationDuration = (3 + Math.random() * 3) + "s";
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 6000);
+}
+
+function yesClicked() {
+  document.body.innerHTML = `
+    <div style="text-align:center; z-index:2;">
+      <h1 style="color:#ff4d6d;">Yay! ❤️</h1>
+      <h2>You just made me the happiest person 😍</h2>
+      <div class="forever">Forever & Always 💞</div>
+
+      <div class="signature">— Praveen</div>
+      <div class="date">14 Feb 2026 💕</div>
+    </div>
+  `;
+
+  setInterval(createFall, 300);
+}
 </script>
 
 </body>
