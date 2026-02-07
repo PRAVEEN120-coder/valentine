@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Will you be my Valentine?</title>
@@ -12,6 +12,7 @@
       align-items: center;
       background: linear-gradient(135deg, #ffdee9, #ffc3a0);
       font-family: Arial, sans-serif;
+      overflow: hidden;
     }
     .card {
       background: white;
@@ -19,16 +20,28 @@
       border-radius: 20px;
       text-align: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      max-width: 360px;
+      max-width: 380px;
     }
-    h1 { margin-bottom: 10px; }
-    .telugu {
-      color: #ff4d6d;
-      font-size: 18px;
+    h1 {
       margin-bottom: 10px;
     }
+    .tagline {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 12px;
+    }
+    .telugu {
+      color: #ff4d6d;
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+    .english-love {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 20px;
+    }
     button {
-      padding: 10px 25px;
+      padding: 10px 28px;
       border-radius: 25px;
       border: none;
       font-size: 16px;
@@ -49,22 +62,43 @@
 
   <div class="card">
     <h1>SIRISHA, will you be my Valentine? ❤️</h1>
-    <div class="telugu">నిన్ను నేను చాలా ప్రేమిస్తున్నాను 💖</div>
-    <p>(I love you so much 😘)</p>
-    <button id="yes" onclick="yesClicked()">YES</button>
-    <button id="no" onmouseover="moveNo()">NO</button>
+
+    <div class="tagline">
+      I’ve been wanting to ask you something special…
+    </div>
+
+    <div class="telugu">
+      నిన్ను నేను చాలా ప్రేమిస్తున్నాను 💖
+    </div>
+
+    <div class="english-love">
+      I may not be perfect, but my feelings for you are real.  
+      You make my days brighter, my smiles wider,  
+      and my heart calmer.  
+      <br><br>
+      So here I am, asking you from my heart…
+    </div>
+
+    <button id="yes" onclick="yesClicked()">YES 💕</button>
+    <button id="no" onmouseover="moveNo()">NO 🙈</button>
   </div>
 
   <script>
     function moveNo() {
       const no = document.getElementById("no");
       no.style.position = "absolute";
-      no.style.left = Math.random() * (window.innerWidth - 100) + "px";
-      no.style.top = Math.random() * (window.innerHeight - 40) + "px";
+      no.style.left = Math.random() * (window.innerWidth - 120) + "px";
+      no.style.top = Math.random() * (window.innerHeight - 50) + "px";
     }
+
     function yesClicked() {
-      document.body.innerHTML =
-        "<h1 style='color:#ff4d6d'>యే! ❤️ నువ్వే నా ప్రపంచం 😍</h1>";
+      document.body.innerHTML = `
+        <div style="text-align:center;">
+          <h1 style="color:#ff4d6d;">Yay! ❤️</h1>
+          <h2>You just made me the happiest person 😍</h2>
+          <p>I promise to choose you, today and always 💍</p>
+        </div>
+      `;
     }
   </script>
 
